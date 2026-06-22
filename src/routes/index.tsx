@@ -148,7 +148,7 @@ function Manifesto() {
 }
 
 const pillars = [
-  { num: "01", key: "p1", img: pillarLiving, ratio: "aspect-video" },
+  { num: "01", key: "p1", img: hsbsCard, ratio: "aspect-video" },
   { num: "02", key: "p2", img: pillarBusiness, ratio: "aspect-video" },
   { num: "03", key: "p3", img: pillarHustling, ratio: "aspect-video" },
   { num: "04", key: "p4", img: portraitStatus, ratio: "aspect-[4/5]" },
