@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLang } from "@/lib/i18n";
 import logo from "@/assets/hs-logo.png";
-import portraitVision from "@/assets/portrait-vision.png";
+import portraitVisionAsset from "@/assets/portrait-vision.png.asset.json";
+const portraitVision = portraitVisionAsset.url;
 import portraitStatus from "@/assets/portrait-status.png";
 import productCeo from "@/assets/product-ceo.png";
 import productOgaon from "@/assets/product-ogaon.png";
