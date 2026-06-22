@@ -11,6 +11,8 @@ import productAviator from "@/assets/product-aviator.png";
 import pillarLiving from "@/assets/pillar-living.jpg";
 import pillarBusiness from "@/assets/pillar-business.jpg";
 import pillarHustling from "@/assets/pillar-hustling.jpg";
+import hsbsCardAsset from "@/assets/hsbs-card.png.asset.json";
+const hsbsCard = hsbsCardAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -234,6 +236,20 @@ function Artifacts() {
         </div>
       </div>
       <p className="text-silver/60 max-w-md mb-10 leading-relaxed">{t("artifactsBody")}</p>
+
+      {/* Featured: HSBS Banking System member card */}
+      <div className="relative mb-6 ring-1 ring-inset ring-gold/20 bg-black overflow-hidden">
+        <img src={hsbsCard} alt="HSBS — Highstreet Banking System member card" loading="lazy" className="w-full aspect-[16/10] object-cover" />
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-2">HSBS · Members Only</p>
+            <p className="font-display text-xl sm:text-3xl font-bold tracking-tighter">Highstreet Banking System</p>
+          </div>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-white/60 border border-white/20 px-3 py-1 hidden sm:inline-block">Black Card</span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <img src={productOgaon} alt="Highstreet eyewear — Ogaon" loading="lazy" className="w-full aspect-square object-cover ring-1 ring-inset ring-white/10" />
         <img src={productCeo} alt="Highstreet eyewear — CEO" loading="lazy" className="w-full aspect-square object-cover ring-1 ring-inset ring-white/10" />
