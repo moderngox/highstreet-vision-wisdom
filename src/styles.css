@@ -85,6 +85,10 @@
     background-color: var(--gold);
     color: var(--noir);
   }
+
+  #lovable-badge {
+    display: none !important;
+  }
 }
 
 @layer utilities {
