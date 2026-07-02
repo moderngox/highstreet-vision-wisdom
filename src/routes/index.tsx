@@ -151,11 +151,11 @@ function Manifesto() {
 }
 
 const pillars = [
-  { num: "01", key: "p1", img: pillarLiving, ratio: "aspect-video" },
-  { num: "02", key: "p2", img: pillarBusiness, ratio: "aspect-video" },
-  { num: "03", key: "p3", img: pillarHustling, ratio: "aspect-video" },
-  { num: "04", key: "p4", img: portraitStatus, ratio: "aspect-[4/5]" },
-  { num: "05", key: "p5", img: pillarLook, ratio: "aspect-[4/5]" },
+  { num: "01", key: "p1", img: pillarLiving, ratio: "aspect-video", objectPosition: undefined as string | undefined },
+  { num: "02", key: "p2", img: pillarBusiness, ratio: "aspect-video", objectPosition: undefined as string | undefined },
+  { num: "03", key: "p3", img: pillarHustling, ratio: "aspect-video", objectPosition: undefined as string | undefined },
+  { num: "04", key: "p4", img: portraitStatus, ratio: "aspect-[4/5]", objectPosition: undefined as string | undefined },
+  { num: "05", key: "p5", img: pillarLook, ratio: "aspect-[4/5]", objectPosition: "object-[50%_25%]" },
 ] as const;
 
 function Pillars() {
@@ -179,7 +179,7 @@ function Pillars() {
               {t(`${p.key}Body` as never)}
             </p>
             <div className={`w-full ${p.ratio} overflow-hidden ring-1 ring-inset ring-white/10`}>
-              <img src={p.img} alt={`${t(`${p.key}Title` as never)} pillar`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={p.img} alt={`${t(`${p.key}Title` as never)} pillar`} loading="lazy" className={`w-full h-full object-cover ${p.objectPosition ?? "object-center"} transition-transform duration-700 group-hover:scale-105`} />
             </div>
           </article>
         ))}
