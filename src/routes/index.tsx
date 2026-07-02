@@ -179,7 +179,7 @@ function Pillars() {
               {t(`${p.key}Body` as never)}
             </p>
             <div className={`w-full ${p.ratio} overflow-hidden ring-1 ring-inset ring-white/10`}>
-              <img src={p.img} alt={`${t(`${p.key}Title` as never)} pillar`} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={p.img} alt={`${t(`${p.key}Title` as never)} pillar`} loading="lazy" className={`w-full h-full object-cover ${p.objectPosition ?? "object-center"} transition-transform duration-700 group-hover:scale-105`} />
             </div>
           </article>
         ))}
