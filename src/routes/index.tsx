@@ -155,7 +155,7 @@ const pillars = [
   { num: "02", key: "p2", img: pillarBusiness, ratio: "aspect-video" },
   { num: "03", key: "p3", img: pillarHustling, ratio: "aspect-video" },
   { num: "04", key: "p4", img: portraitStatus, ratio: "aspect-[4/5]" },
-  { num: "05", key: "p5", img: pillarLook, ratio: "aspect-[4/5]" },
+  { num: "05", key: "p5", img: pillarLook, ratio: "aspect-[4/5]", objectPosition: "object-[50%_25%]" },
 ] as const;
 
 function Pillars() {
