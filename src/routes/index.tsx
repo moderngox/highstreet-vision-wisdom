@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import logo from "@/assets/hs-logo.png";
 import portraitVisionAsset from "@/assets/portrait-vision.png.asset.json";
@@ -55,30 +57,60 @@ function LanguageToggle() {
 
 function Nav() {
   const { t } = useLang();
+  const [open, setOpen] = useState(false);
+  const links = [
+    { href: "#manifesto", label: t("navMembers") },
+    { href: "#pillars", label: t("navPillars") },
+    { href: "#agency", label: t("navAgency") },
+    { href: "#artifacts", label: t("navArtifacts") },
+  ];
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 sm:px-8 py-4 bg-background/70 backdrop-blur-md border-b border-white/5">
-      <a href="#top" className="flex items-center gap-2.5">
-        <img src={logo} alt="Highstreet 하스 logo" width={28} height={28} className="invert-0 brightness-0 dark:filter-none" style={{ filter: "brightness(0) invert(1)" }} />
-        <div className="flex flex-col leading-none">
-          <span className="font-display font-bold text-base tracking-tighter">하스</span>
-          <span className="text-[8px] tracking-[0.3em] uppercase text-gold mt-0.5">Highstreet</span>
-        </div>
-      </a>
-      <div className="hidden md:flex items-center gap-8 text-[11px] tracking-[0.2em] uppercase text-white/70">
-        <a href="#manifesto" className="hover:text-white transition-colors">{t("navMembers")}</a>
-        <a href="#pillars" className="hover:text-white transition-colors">{t("navPillars")}</a>
-        <a href="#agency" className="hover:text-white transition-colors">{t("navAgency")}</a>
-        <a href="#artifacts" className="hover:text-white transition-colors">{t("navArtifacts")}</a>
-      </div>
-      <div className="flex items-center gap-3">
-        <LanguageToggle />
-        <a href="#apply" className="hidden sm:inline-flex text-[10px] font-bold tracking-[0.2em] uppercase bg-white text-black px-4 py-2 hover:bg-gold transition-colors">
-          {t("navApply")}
+    <nav className="fixed top-0 inset-x-0 z-50 bg-background/70 backdrop-blur-md border-b border-white/5">
+      <div className="flex items-center justify-between px-5 sm:px-8 py-4">
+        <a href="#top" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <img src={logo} alt="Highstreet 하스 logo" width={28} height={28} style={{ filter: "brightness(0) invert(1)" }} />
+          <div className="flex flex-col leading-none">
+            <span className="font-display font-bold text-base tracking-tighter">하스</span>
+            <span className="text-[8px] tracking-[0.3em] uppercase text-gold mt-0.5">Highstreet</span>
+          </div>
         </a>
+        <div className="hidden md:flex items-center gap-8 text-[11px] tracking-[0.2em] uppercase text-white/70">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="hover:text-white transition-colors">{l.label}</a>
+          ))}
+        </div>
+        <div className="flex items-center gap-3">
+          <LanguageToggle />
+          <a href="#apply" className="hidden sm:inline-flex text-[10px] font-bold tracking-[0.2em] uppercase bg-white text-black px-4 py-2 hover:bg-gold transition-colors">
+            {t("navApply")}
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="md:hidden inline-flex items-center justify-center w-9 h-9 border border-white/15 text-white"
+          >
+            {open ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </button>
+        </div>
       </div>
+      {open && (
+        <div className="md:hidden border-t border-white/5 px-5 py-4 flex flex-col gap-4 text-[12px] tracking-[0.2em] uppercase text-white/80 bg-background/95">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="hover:text-gold transition-colors">
+              {l.label}
+            </a>
+          ))}
+          <a href="#apply" onClick={() => setOpen(false)} className="sm:hidden inline-flex justify-center text-[10px] font-bold tracking-[0.2em] uppercase bg-white text-black px-4 py-2.5 hover:bg-gold transition-colors">
+            {t("navApply")}
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
+
 
 function Hero() {
   const { t, lang } = useLang();
