@@ -262,7 +262,7 @@ function Artifacts() {
         <img src={productAviator} alt="Highstreet eyewear — Aviator" loading="lazy" className="w-full aspect-square object-cover ring-1 ring-inset ring-white/10" />
         <img src={productPackage} alt="Highstreet packaging" loading="lazy" className="w-full aspect-square object-cover ring-1 ring-inset ring-white/10" />
       </div>
-      <a href="https://swagfake.com/es/collections/highstreet" target="_blank" rel="noreferrer" className="inline-flex mt-10 text-[10px] tracking-[0.3em] uppercase border-b border-gold pb-1 text-gold hover:text-white hover:border-white transition-colors">
+      <a href="https://www.instagram.com/highstreet_kr" target="_blank" rel="noreferrer" className="inline-flex mt-10 text-[10px] tracking-[0.3em] uppercase border-b border-gold pb-1 text-gold hover:text-white hover:border-white transition-colors">
         View the collection →
       </a>
     </section>
