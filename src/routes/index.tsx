@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import logo from "@/assets/hs-logo.png";
 import portraitVisionAsset from "@/assets/portrait-vision.png.asset.json";
