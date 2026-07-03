@@ -15,7 +15,8 @@ import pillarLivingAsset from "@/assets/pillar-living.jpg.asset.json";
 const pillarLiving = pillarLivingAsset.url;
 import pillarBusinessAsset from "@/assets/pillar-business.jpg.asset.json";
 const pillarBusiness = pillarBusinessAsset.url;
-import pillarHustling from "@/assets/pillar-hustling.jpg";
+import pillarHustlingAsset from "@/assets/pillar-hustling.jpg.asset.json";
+const pillarHustling = pillarHustlingAsset.url;
 import hsbsCardAsset from "@/assets/hsbs-card.png.asset.json";
 const hsbsCard = hsbsCardAsset.url;
 
