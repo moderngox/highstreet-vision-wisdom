@@ -12,10 +12,10 @@ export const dict = {
   navArtifacts: { en: "Artifacts", kr: "아티팩트" },
 
   heroEyebrow: { en: "Private Members Society / Est. Seoul", kr: "비공개 멤버스 소사이어티 / 서울" },
-  heroLine1: { en: "HIGH", kr: "비전" },
-  heroLine2: { en: "VISION", kr: "그리고" },
-  heroLine3: { en: "STREET", kr: "거리의" },
-  heroLine4: { en: "WISDOM", kr: "지혜" },
+  heroLine1: { en: "HIGH", kr: "HIGH" },
+  heroLine2: { en: "VISION", kr: "VISION" },
+  heroLine3: { en: "STREET", kr: "STREET" },
+  heroLine4: { en: "WISDOM", kr: "WISDOM" },
   heroSub: {
     en: "The private collective for human growth. Balancing intuition with the raw wisdom of the physical world.",
     kr: "인간 성장을 위한 비공개 컬렉티브. 직관과 거리의 지혜 사이에서 균형을 찾는 곳.",
