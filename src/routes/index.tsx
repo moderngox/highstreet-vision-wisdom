@@ -22,15 +22,143 @@ const pillarHustling = pillarHustlingAsset.url;
 import hsbsCardAsset from "@/assets/hsbs-card.png.asset.json";
 const hsbsCard = hsbsCardAsset.url;
 
+const SITE_URL = "https://highstreet.co.kr";
+const OG_IMAGE = `${SITE_URL}${portraitVisionAsset.url}`;
+
+const HOME_TITLE = "HighStreet | Private Members Club Seoul";
+const HOME_DESC =
+  "HighStreet is an invitation-only private members club connecting founders, entrepreneurs, investors, creators and global tastemakers through curated experiences in Seoul.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "HighStreet",
+      alternateName: ["하스", "Highstreet"],
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.png`,
+      email: "access@highstreet.co.kr",
+      sameAs: ["https://www.instagram.com/highstreet_kr"],
+      areaServed: "KR",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "HighStreet",
+      description: HOME_DESC,
+      inLanguage: ["en", "ko"],
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE_URL}/?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#club`,
+      name: "HighStreet Private Members Club",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      priceRange: "$$$$",
+      address: { "@type": "PostalAddress", addressLocality: "Seoul", addressCountry: "KR" },
+      areaServed: { "@type": "City", name: "Seoul" },
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is HighStreet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "HighStreet (하스) is an invitation-only private members club based in Seoul that connects founders, entrepreneurs, investors, creators and global tastemakers through curated meetings, courses, expert services and limited artifacts.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is HighStreet for?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "HighStreet is for founders, operators, investors, family-office principals, creators and cultural tastemakers who want a trusted peer network of ambitious, high-signal operators.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Where does HighStreet operate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "HighStreet is headquartered in Seoul, South Korea, with gatherings extending across Asia and select global cities.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why does HighStreet exist?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "HighStreet exists to compound human growth for a small circle of operators — pairing High Vision (long-term thinking, taste, capital) with Street Wisdom (execution and real-world instinct) in a private, off-record room.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What value do members receive?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Members receive private meetings and dinners, curated courses, access to vetted expert services (legal, financial, creative, growth), limited luxury artifacts reserved for members, and a trusted global peer network.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I join HighStreet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Membership is by invitation only. You can request access by emailing access@highstreet.co.kr.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Highstreet — 하스 · High Vision, Street Wisdom" },
-      { name: "description", content: "Highstreet (하스) is a private members society for human growth — meetings, courses, expert services and limited luxury accessories." },
-      { property: "og:title", content: "Highstreet — 하스" },
-      { property: "og:description", content: "Private members society. High Vision, Street Wisdom." },
+      { title: HOME_TITLE },
+      { name: "description", content: HOME_DESC },
+      { name: "keywords", content: "HighStreet, 하스, private members club Seoul, invitation only club Korea, founders club Seoul, entrepreneurs club Korea" },
+      { property: "og:title", content: HOME_TITLE },
+      { property: "og:description", content: HOME_DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL + "/" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:alt", content: "HighStreet — Private Members Club Seoul" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: HOME_TITLE },
+      { name: "twitter:description", content: HOME_DESC },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: SITE_URL + "/" },
+      { rel: "alternate", hrefLang: "en", href: SITE_URL + "/" },
+      { rel: "alternate", hrefLang: "ko", href: SITE_URL + "/" },
+      { rel: "alternate", hrefLang: "x-default", href: SITE_URL + "/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(jsonLd),
+      },
+    ],
   }),
   component: Index,
 });
