@@ -1,0 +1,13 @@
+{
+  "name": "HighStreet — Private Members Club Seoul",
+  "short_name": "HighStreet",
+  "description": "Invitation-only private members club in Seoul connecting founders, entrepreneurs, investors, creators and global tastemakers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#C5A059",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
