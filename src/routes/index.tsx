@@ -313,7 +313,7 @@ function CTA() {
         <h2 className="font-display text-4xl sm:text-6xl font-bold tracking-tighter -mt-6 sm:-mt-10 mb-6">{t("ctaTitle")}</h2>
         <p className="text-silver/60 max-w-md mx-auto mb-10 leading-relaxed">{t("ctaBody")}</p>
         <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <a href="mailto:cedric@highstreet.co.kr" className="flex-1 py-4 bg-gold text-black text-[11px] tracking-[0.3em] font-bold uppercase hover:bg-white transition-colors">
+          <a href="mailto:access@highstreet.co.kr" className="flex-1 py-4 bg-gold text-black text-[11px] tracking-[0.3em] font-bold uppercase hover:bg-white transition-colors">
             {t("ctaApply")}
           </a>
           <a href="https://instagram.com/highstreet_kr" target="_blank" rel="noreferrer" className="flex-1 py-4 border border-white/20 text-[11px] tracking-[0.3em] font-bold uppercase hover:bg-white/5 transition-colors">
