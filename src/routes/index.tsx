@@ -20,7 +20,7 @@ const pillarBusiness = pillarBusinessAsset.url;
 import pillarHustlingAsset from "@/assets/pillar-hustling.jpg.asset.json";
 const pillarHustling = pillarHustlingAsset.url;
 import hsbsCardAsset from "@/assets/hsbs-card.png";
-const hsbsCard = hsbsCardAsset.url;
+const hsbsCard = hsbsCardAsset;
 
 const SITE_URL = "https://highstreet.co.kr";
 const OG_IMAGE = `${SITE_URL}${portraitVisionAsset.url}`;
